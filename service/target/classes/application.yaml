@@ -1,0 +1,57 @@
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/graduation?serverTimezone=GMT%2B8
+      username: root
+      password: z1314520
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  mail:
+    host: smtp.qq.com
+    username: 1626266974@qq.com
+    password: zjihjjncpftgcbbg
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    default-encoding: UTF-8
+  freemarker:
+    content-type: text/html
+    #后缀名
+    suffix: .ftl
+    template-loader-path: classpath:/templates
+    charset: UTF-8
+    check-template-location: true
+
+#  mail:
+#    host: smtp.exmail.qq.com   // 邮件服务
+#    username: 1626266974@qq.com
+#    password: zjihjjncpftgcbbg
+#    port: 465
+#    protocol: smtp
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          ssl:
+#            enable: true
+#          starttls:
+#            enable: true
+mybatis-plus:
+  configuration:
+    log-impl:
+      org.apache.ibatis.logging.stdout.StdOutImpl

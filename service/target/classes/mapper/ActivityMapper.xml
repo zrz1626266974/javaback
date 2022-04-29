@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zrz.service.mapper.ActivityMapper">
+<!--    <resultMap id="acRes" type="com.zrz.service.entity.Activity" autoMapping="true">-->
+<!--        <id property="acid" column="acid" />-->
+<!--        <result property="name" column="name" />-->
+<!--        <collection property="type" ofType="com.zrz.service.entity.Type">-->
+<!--            <id property="typeid" column="typeid" />-->
+<!--            <result property="name" column="tyname" />-->
+<!--        </collection>-->
+<!--    </resultMap>-->
+<!--    <select id="getActivityList" resultMap="acRes" parameterType="int">-->
+<!--        select activity.*, t.name as tyname-->
+<!--        from activity left join type t on activity.typeid = t.typeid;-->
+<!--    </select>-->
+<!--    <select id="getActivityById" resultMap="acRes">-->
+<!--        select a.*, type.name as tyname-->
+<!--        from (select * from activity where acid= #{acid}) a left join type on a.typeid = type.typeid;-->
+<!--    </select>-->
+    <update id="updateActivity" parameterType="com.zrz.service.entity.Activity">
+        update activity set id=#{id},typeid=#{typeid},name=#{name},place=#{place},
+                            stime=#{stime},etime=#{etime},detail=#{detail},
+                            count=#{count},point=#{point},leader=#{leader},
+                            tel=#{tel},time=now()
+        where acid=#{acid};
+    </update>
+</mapper>
